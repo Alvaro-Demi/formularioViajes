@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let viaje of viajes">
+      <div class="card viaje-card">
+        <div class="card-body">
+          <h5 class="card-title">{{ viaje.destino }}</h5>
+          <p class="card-text">
+            <strong>Fecha:</strong> {{ viaje.fecha | date:'dd/MM/yyyy' }}<br>
+            <strong>Duración:</strong> {{ viaje.duracion }} días<br>
+            <strong>Presupuesto:</strong> {{ viaje.presupuesto | currency }}
+          </p>
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-primary" (click)="editarViaje(viaje)">Editar</button>
+            <button class="btn btn-danger" (click)="eliminarViaje(viaje)">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
